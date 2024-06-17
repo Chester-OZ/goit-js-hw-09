@@ -1,4 +1,5 @@
 /* Reset styles */
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -42,6 +43,7 @@ img {
 input,
 textarea,
 button {
+  box-sizing: border-box;
   font-family: inherit;
   line-height: inherit;
   padding: 0;
