@@ -67,10 +67,10 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
+const galleryElement = document.querySelector('.gallery');
 
-const createGalleryMarkup = arrGallery =>
-  arrGallery
+function createGalleryMarkup(arrGallery) {
+  return arrGallery
     .map(
       ({ preview, original, description }) => `
   <li class="gallery-item">
@@ -84,11 +84,12 @@ const createGalleryMarkup = arrGallery =>
   </li>`
     )
     .join('');
+}
 
-gallery.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
+galleryElement.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
 
 document.addEventListener('DOMContentLoaded', () => {
-  gallery = new SimpleLightbox('.gallery a', {
+  const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
     showCounter: false,
